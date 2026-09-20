@@ -1,15 +1,15 @@
+import localFont from "next/font/local";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+
+import { cn } from "@/lib/utils";
 import "./globals.css";
+import GsapProvider from "@/components/GsapProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const alpino = localFont({
+  src: "../../public/fonts/Alpino-Variable.woff2",
+  display: "swap",
+  weight: "100 900",
+  variable: "--font-alpino",
 });
 
 export const metadata: Metadata = {
@@ -21,9 +21,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={cn("h-full", "antialiased", alpino.variable)}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body
+        className="min-h-full flex flex-col overflow-x-hidden bg-yellow-300"
+      >
+        <GsapProvider>
+          {children}
+        </GsapProvider>
+      </body>
     </html>
   );
 }
