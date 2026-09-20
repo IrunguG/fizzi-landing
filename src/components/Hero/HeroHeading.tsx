@@ -3,9 +3,14 @@
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
-export const HeroText = () => {
+export const HeroHeading = () => {
+    const headingRef = useRef<HTMLDivElement>(null)
+
     useGSAP(() => {
+        if(!headingRef) return null
+
         const split = SplitText.create(".hero-heading", {
             type: "words, chars"
         });
@@ -40,8 +45,8 @@ export const HeroText = () => {
 
 
     return (
-        <div className="space-y-5">
-            <h1 className="hero-heading space-y-2 leading-[.8] uppercase text-7xl lg:text-9xl font-bold text-orange-400">
+        <div ref={headingRef} className="space-y-5">
+            <h1 className="hero-heading space-y-2 leading-[.8] uppercase text-9xl md:text-[12rem] lg:text-[14rem] font-bold text-orange-400">
                 LIVE
                 <br />
                 GUTSY

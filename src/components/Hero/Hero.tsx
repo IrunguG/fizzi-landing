@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Button } from "./ui/button"
-import { HeroText } from "./HeroText";
+import { Button } from "../ui/button"
+import { HeroHeading } from "./HeroHeading";
+import { HeroFlavors } from "./HeroFlavors";
 
 export const Hero = () => {
     return (
@@ -10,7 +11,7 @@ export const Hero = () => {
             <div className="grid">
                 <div className="grid h-screen place-items-center">
                     <div className="grid auto-rows-min place-items-center text-center">
-                        <HeroText />
+                        <HeroHeading />
                         <div className="hero-cta">
                             <Link href="/">
                                 <Button
@@ -23,14 +24,7 @@ export const Hero = () => {
                 </div>
                 
                 <div className="grid text-side relative z-80 h-screen items-center gap-4 md:grid-cols-2">
-                    <div className="px-10">
-                        <h2 className="text-6xl text-sky-600 lg:text-8xl font-extrabold text-side-heading text-balance">
-                            TRY ALL FIVE FLAVORS
-                        </h2>
-                        <p className="text-black mt-4 max-w-xl text-xl text-balance text-side-body">
-                            Our soda is made with real fruit juice and a touch of cane sugar. We never use artificial sweeteners or high fructose corn syrup. Try all five flavors and find your favorite!
-                        </p>
-                    </div>
+                    <HeroFlavors />
                     <Image
                         src="/all-cans-bunched.png"
                         alt="cans"
