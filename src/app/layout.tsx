@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import GsapProvider from "@/components/GsapProvider";
+import { ViewCanvas } from "@/components/canvas/ViewCanvas";
 
 const alpino = localFont({
   src: "../../public/fonts/Alpino-Variable.woff2",
@@ -24,10 +25,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={cn("h-full", "antialiased", alpino.variable)}
     >
       <body
-        className="min-h-full flex flex-col overflow-x-hidden bg-yellow-300"
+        className="min-h-full flex flex-col overflow-x-hidden bg-[#FDE04]"
       >
         <GsapProvider>
           {children}
+          <ViewCanvas />
         </GsapProvider>
       </body>
     </html>

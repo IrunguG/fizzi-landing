@@ -4,11 +4,19 @@ import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { useHeroStore } from "@/lib/store/useHeroStore";
+import { useMediaQuery } from "react-responsive";
 
 export const HeroHeading = () => {
-    const headingRef = useRef<HTMLDivElement>(null)
+    const headingRef = useRef<HTMLDivElement>(null);
+
+    const isDesktop = useMediaQuery({ query: "(min-width: 768px)" });
+
+    const { ready } = useHeroStore();
 
     useGSAP(() => {
+        if(!ready && isDesktop) return;
+
         if(!headingRef) return null
 
         const split = SplitText.create(".hero-heading", {
@@ -41,7 +49,7 @@ export const HeroHeading = () => {
             })
 
             return () => split.revert()
-    })
+    }, { dependencies: [ready, isDesktop] })
 
 
     return (
