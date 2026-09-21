@@ -137,6 +137,16 @@
   }
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .animate-slide-left {
   animation: slide-left 3s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 6s linear infinite;
 }
