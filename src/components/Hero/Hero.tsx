@@ -4,10 +4,14 @@ import Link from "next/link";
 import { Button } from "../ui/button"
 import { HeroHeading } from "./HeroHeading";
 import { HeroFlavors } from "./HeroFlavors";
+import { DynamicHeroScene } from "./DynamicHeroScene";
 
 export const Hero = () => {
     return (
-        <section className="hero opacity-0">
+        <section className="hero opacity-0 relative">
+            <div className="absolute inset-0 pointer-events-none">
+                <DynamicHeroScene />
+            </div>
             <div className="grid">
                 <div className="grid h-screen place-items-center">
                     <div className="grid auto-rows-min place-items-center text-center">

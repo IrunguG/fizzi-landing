@@ -12,7 +12,7 @@ export const HeroFlavors = () => {
         if(!flavorsRef.current) return;
 
         const split = SplitText.create(".text-side-heading", {
-            type: "words, chars"
+            type: "words,chars"
         })
 
         const flavorsTl = gsap.timeline({
@@ -21,16 +21,14 @@ export const HeroFlavors = () => {
                 start: "top top",
                 end: "bottom bottom",
                 scrub: 1.5,
-                markers: true
+                invalidateOnRefresh: true,
             }
         })
 
         flavorsTl
-            .fromTo("body",
+            .to("body",
                 {
-                    backgroundColor: "#FDE047"
-                }, {
-                    backgroundColor: "#D9F99D",
+                    backgroundColor: "#97D25B",
                     overwrite: "auto"
                 }, 1
             )
@@ -53,7 +51,8 @@ export const HeroFlavors = () => {
                     y: 20
                 }
             )
-    })
+            return () => split.revert()
+    }, [])
 
     return (
         <div ref={flavorsRef} className="px-10">
