@@ -139,7 +139,7 @@ export const Scene = ({ sentence, flavor }: SceneProps) => {
                 {
                     keyframes: [
                         { x: 0, y: 0, z: -1 },
-                        { ...getXYPosition(-7), z: -7, scale: 0.5 }
+                        { ...getXYPosition(-7), z: -7 }
                     ],
 
                     stagger: .3
