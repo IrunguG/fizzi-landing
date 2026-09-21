@@ -28,9 +28,9 @@ export const HeroFlavors = () => {
         flavorsTl
             .to("body",
                 {
-                    backgroundColor: "#FDE047",
+                    backgroundColor: "#97D25B",
                     overwrite: "auto"
-                }, 0
+                }, 1
             )
 
             .from(split.chars,
@@ -52,7 +52,7 @@ export const HeroFlavors = () => {
                 }
             )
             return () => split.revert()
-    })
+    }, [])
 
     return (
         <div ref={flavorsRef} className="px-10">

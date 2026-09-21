@@ -23,7 +23,7 @@ export function WavyCircles(props: SVGProps<SVGSVGElement>) {
       ease: "none",
       repeat: -1,
     });
-  });
+  }, []);
 
   return (
     <svg

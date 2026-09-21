@@ -175,7 +175,7 @@ export const Scene = ({ sentence, flavor }: SceneProps) => {
             </group>
             
             {/* Clouds */}
-            <Clouds ref={cloudsRef} material={THREE.MeshBasicMaterial}>
+            <Clouds ref={cloudsRef} texture="/cloud.png">
                 <Cloud ref={cloud1Ref} bounds={[10, 10, 2]} />
                 <Cloud ref={cloud2Ref} bounds={[10, 10, 2]} />
             </Clouds>

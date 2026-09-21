@@ -17,7 +17,7 @@ export const HeroHeading = () => {
     useGSAP(() => {
         if(!ready && isDesktop) return;
 
-        if(!headingRef) return null
+        if(!headingRef.current) return null
 
         const split = SplitText.create(".hero-heading", {
             type: "words, chars"

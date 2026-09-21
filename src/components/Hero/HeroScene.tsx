@@ -1,6 +1,6 @@
 "use client";
 
-import { View } from "@react-three/drei";
+import { OrbitControls, View } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 
 import { Scene } from "../canvas/Scene";
@@ -13,10 +13,11 @@ export const HeroScene = () => {
         <>
             {isDesktop && 
                 <View
-                    className="hero-scene pointer-events-none sticky top-0 z-50 mt-[-100vh] hidden h-screen w-screen md:block"
+                    className="hero-scene sticky top-0 z-50 hidden h-screen w-screen md:block"
                 >
                     <Scene />
                     <Bubbles />
+                    <OrbitControls />
                 </View>}
         </>
     )

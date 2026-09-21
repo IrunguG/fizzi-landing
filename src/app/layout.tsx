@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={cn("h-full", "antialiased", alpino.variable)}
     >
       <body
-        className="min-h-full flex flex-col overflow-x-hidden bg-[#FDE04]"
+        className="min-h-full flex flex-col overflow-x-hidden bg-[#FDE047]"
       >
         <GsapProvider>
           {children}
